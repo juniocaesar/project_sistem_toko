@@ -11,9 +11,10 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true,
     },
-    autoHideMenuBar: true,
+    // autoHideMenuBar: true,
+    // frame: false,
   })
-
+  win.removeMenu()
   // and load the index.html of the app.
   // win.loadFile("index.html");
   win.loadURL(
@@ -21,7 +22,7 @@ function createWindow() {
   )
   // Open the DevTools.
   if (isDev) {
-    // win.webContents.openDevTools({ mode: 'detach' });
+    win.webContents.openDevTools({ mode: 'detach' });
   }
 }
 
